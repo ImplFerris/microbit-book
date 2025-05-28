@@ -1,22 +1,15 @@
-# impl Rust for Microbit
+# Intro
 
 In this book, we use the Microbit (v2) with Rust to build simple and fun projects. 
 
+
 ## Prerequisites
+
 
 ## Meet the Hardware
 
-## How to read?
-
-You can access the MD book here: https://mb2.implrust.com/
-
-or you can run locally
-
-```sh
-mdbook serve --open
-```
-
 ## Datasheets
+
 
 ## License
 
@@ -24,13 +17,10 @@ The "impl Rust for Microbit" book(this project) is distributed under the followi
 
 * The code samples and free-standing Cargo projects contained within this book are licensed under the terms of both the [MIT License] and the [Apache License v2.0].
 * The written prose contained within this book is licensed under the terms of the Creative Commons [CC-BY-SA v4.0] license.
-
-[MIT License]: ./LICENSE-MIT
-[Apache License v2.0]: ./LICENSE-APACHE
-[CC-BY-SA v4.0]: ./LICENSE-CC-BY-SA
-[MIT License Hosted]: https://opensource.org/licenses/MIT
-[Apache License v2.0 Hosted]: http://www.apache.org/licenses/LICENSE-2.0
-[CC-BY-SA v4.0 Hosted]: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+ 
+[MIT License]: https://opensource.org/licenses/MIT
+[Apache License v2.0]: http://www.apache.org/licenses/LICENSE-2.0
+[CC-BY-SA v4.0]: https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 
 ## Support this project
