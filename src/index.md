@@ -1,14 +1,27 @@
-# Intro
+# Intro - Embedded Rust Programming with Microbit
 
-In this book, we use the Microbit (v2) with Rust to build simple and fun projects. 
+In this book, we use the Micro:bit (v2) with Rust to build simple and fun projects. 
 
+## Why this book?
+
+There's already a nice book called "Discovery" that covers embedded Rust with the micro:bit. So you might be thinking - why write another book? Well, why not? :) Honestly, one of the best ways I learn and really dig into something is by teaching it to others. When I explain stuff to others, it helps me understand it better too. So this book is me learning out loud and bringing you along for the ride.
+
+Like the other "impl Rust" books for the [ESP32](https://esp32.implrust.com/) and [Raspberry Pi Pico](https://pico.implrust.com/), this one is meant to be fun and hands-on too. Hopefully someone out there finds it useful - that's the goal behind writing it.
 
 ## Prerequisites
 
+- **Rust basics:** You should have a basic understanding of Rust. This book doesn't cover the fundamentals of the language.  If you're new to Rust, I recommend starting with the [official Rust book](https://doc.rust-lang.org/book/). You can also find other resources [here](https://implrust.com/learn/beginner/).
 
 ## Meet the Hardware
 
 ## Datasheets
+
+
+## Other Learning Resources
+
+- **[The Embedded Rust Book](https://docs.rust-embedded.org/book/intro/index.html) :** This is a great resource if you're just getting into embedded Rust. You don't have to read it before jumping into this book, but it's a good place to start.   I'll do my best to explain things as we go, but if I miss something or don't cover it clearly, this book can really come in handy. One way or another, I definitely recommend giving it a read.
+
+-  **[Discovery](https://docs.rust-embedded.org/discovery-mb2/index.html):** This is the book I mentioned earlier. It covers embedded Rust programming with the micro:bit. You can read it in any order - either start with "impl Rust for Microbit" and then read "Discovery," or the other way around.
 
 
 ## License
