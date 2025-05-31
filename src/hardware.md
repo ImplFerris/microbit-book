@@ -28,6 +28,6 @@ Datasheets and technical manuals are helpful for understanding the pin layout, e
 
 - **LSM303AGR:** A low-power 3-axis accelerometer and magnetometer sensor used for motion detection and orientation tracking. You can access its datasheet [here](https://www.st.com/en/mems-and-sensors/lsm303agr.html)
 
-- **Schematic:** This provides a detailed diagram showing the electrical connections and components of the device. The full schematic in PDF format is available on GitHub [here](https://github.com/microbit-foundation/microbit-v2-hardware/blob/main/V2.00/MicroBit_V2.0.0_S_schematic.PDF). Detailed schematic information is also available on this webpage: https://tech.microbit.org/hardware/schematic/
+- **Schematic:** This provides a detailed diagram showing the electrical connections and components of the device. The full schematic in PDF format is available on GitHub [here](https://github.com/microbit-foundation/microbit-v2-hardware/blob/main/V2.00/MicroBit_V2.0.0_S_schematic.PDF). Detailed schematic information is also available on this webpage: [https://tech.microbit.org/hardware/schematic/](https://tech.microbit.org/hardware/schematic/)
 
 Don't be overwhelmed by all the information here and in the document. We will take it step by step, starting with some fun exercises. You can always return later to explore the details at your own pace.

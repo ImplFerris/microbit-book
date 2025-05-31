@@ -13,7 +13,7 @@ You can search for "Micro Bit V2" on e-commerce websites and choose the option t
 
 <a href ="./images/microbit.jpg"><img alt="microbit" style="display: block; margin: auto;width:500px;" src="./images/microbit.jpg"/></a>
 
-**Note:** I purchased the Micro Bit V2.21 with the accessories(micro USB cable). You might receive a different V2 version, which is fine as long as it is a V2 variant (not the older V1). I also bought other sensors as I went along.
+**Note:** I purchased the Micro Bit V2.21 with the accessories(micro USB cable). You might receive a different V2 version, which is fine as long as it is a V2 variant (not the older V1). I also bought other sensors as I went along (but dont worry about that now).
 
 
 ## Why this book?
