@@ -16,7 +16,8 @@ cargo install cargo-generate
 ```
 
 ## Step 1: Generate the Project
-Run the following command to generate the project from the template:
+
+I have created a project template for the microbit to make project setup and learning easier. Run the following command to generate a new project from the template:
 
 ```sh
 cargo generate --git https://github.com/ImplFerris/mb2-template.git
@@ -24,3 +25,4 @@ cargo generate --git https://github.com/ImplFerris/mb2-template.git
 
 This will prompt you to answer a few questions:
 Project name: Name your project.
+

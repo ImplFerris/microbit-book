@@ -59,4 +59,4 @@ Run the following command from your project folder:
 cargo embed
 ```
 
-The first LED in the top row of the display matrix should start blinking now.
+The first LED in the top row of the display matrix should start blinking now.  If you are able to flash successfully and see the blinking effect, congratulations!

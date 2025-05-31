@@ -39,6 +39,8 @@ Like the other "impl Rust" books for the [ESP32](https://esp32.implrust.com/) an
 
 -  **[Discovery](https://docs.rust-embedded.org/discovery-mb2/index.html):** This is the book I mentioned earlier. It covers embedded Rust programming with the micro:bit. You can read it in any order - either start with "impl Rust for Microbit" and then read "Discovery," or the other way around.
 
+- **[The Rusty Bits \[Youtube\]](https://www.youtube.com/@therustybits)** : This is one of my favorite youtube channel. It has a great videos on embedded rust programming with microbit.
+
 
 ## License
 
