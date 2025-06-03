@@ -9,7 +9,7 @@ The microbit has a 5x5 LED matrix that you can control to show patterns, charact
 
 ## The Full code
 
-Don't worry about the code for now - we will explain it in the next chapter. This code simply turns on the LED at the top-left corner, then turns it off after a short delay to create a blinking effect.
+Don't worry about the code for now - we will explain it in the next chapter. This code simply turns on the LED at the top-left corner, then turns it off after a short delay in a loop; this will create a blinking effect.
 
 ```rust
 #![no_std]

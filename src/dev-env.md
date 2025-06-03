@@ -17,3 +17,26 @@ You can confirm the installation was successful by running this command:
 ```bash
 cargo embed --version
 ```
+
+## Cross compilation target
+
+Since the micro:bit runs on an ARM Cortex-M processor, we need to compile our Rust code for that architecture. This requires setting up a specific compilation target for cross-compiling.
+
+For the micro:bit v2, the correct target is:
+
+```text
+thumbv7em-none-eabihf
+```
+
+You can add this target using Rust's built-in toolchain manager:
+```sh
+rustup target add thumbv7em-none-eabihf
+```
+
+Once added, you can specify this target when building or flashing your project. For example:
+```sh
+cargo build --release --target thumbv7em-none-eabihf
+```
+
+Or it will be used automatically when running tools like `cargo embed`, as long as your project is configured correctly(this part we will get into later chapter).
+

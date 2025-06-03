@@ -1,6 +1,6 @@
 # Hardware details of Micro:bit
 
-Everything I am going to explain here is already covered in detail in the official Microbit documentation. To avoid repeating that information, I will keep it brief and recommend you to read the [official documentation here](https://tech.microbit.org/hardware/2-0-revision/) for more details.
+Everything I am going to explain here is already covered in detail in the official Microbit documentation.  I will give brief on the hardware details.  For more in depth technical details, you will need to read the [official documentation here](https://tech.microbit.org/hardware/2-0-revision/).
 
 At the heart of the board is the nRF52833 system-on-chip (SoC). This is where all our code will run. It's built around a 32-bit Arm Cortex-M4 processor with a floating point unit(FPU). It comes with 128KB of RAM (yep, just 128KB!) and runs at 64 MHz speed.
 
@@ -30,4 +30,4 @@ Datasheets and technical manuals are helpful for understanding the pin layout, e
 
 - **Schematic:** This provides a detailed diagram showing the electrical connections and components of the device. The full schematic in PDF format is available on GitHub [here](https://github.com/microbit-foundation/microbit-v2-hardware/blob/main/V2.00/MicroBit_V2.0.0_S_schematic.PDF). Detailed schematic information is also available on this webpage: [https://tech.microbit.org/hardware/schematic/](https://tech.microbit.org/hardware/schematic/)
 
-Don't be overwhelmed by all the information here and in the document. We will take it step by step, starting with some fun exercises. You can always return later to explore the details at your own pace.
+Don't be overwhelmed by all the information here or in the document. We will take it step by step, starting with some fun exercises. You can always return later to explore the details at your own pace.
