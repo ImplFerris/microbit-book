@@ -1,26 +1,47 @@
-# Project Template with `cargo-generate`
+# Micro:bit Project Template with `cargo-generate`
 
-"cargo-generate is a developer tool to help you get up and running quickly with a new Rust project by leveraging a pre-existing git repository as a template."
+To simplify project setup and learning for the micro:bit, I've created a reusable project template. We'll use the `cargo-generate` tool to get started.
 
-Read more about [here](https://github.com/cargo-generate/cargo-generate).
- 
+> What is `cargo-generate`?  
+> `cargo-generate` is a tool that helps you quickly create new Rust projects using pre-made templates, avoiding boilerplate setup and code.
+
+
+You can learn more about it [here](https://github.com/cargo-generate/cargo-generate).
+
 ## Prerequisites
 
-Before starting, ensure you have the following tools installed:
+Before installing `cargo-generate`, make sure you have `libssl-dev` installed. 
 
-- [cargo-generate](https://github.com/cargo-generate/cargo-generate) for generating the project template.
+On Ubuntu or Debian-based systems, run:
 
-You can install `cargo-generate` using the following command:
-```sh
+```bash
+sudo apt install libssl-dev
+```
+
+Then, install cargo-generate with:
+
+```bash
 cargo install cargo-generate
 ```
 
-## Step 1: Generate the Project
-Run the following command to generate the project from the template:
+## Step 1: Generate a New Project
+
+Once `cargo-generate` is installed, you can generate a new project using the following command:
 
 ```sh
 cargo generate --git https://github.com/ImplFerris/mb2-template.git
 ```
 
-This will prompt you to answer a few questions:
-Project name: Name your project.
+You will be prompted to enter a project name. After that, a new directory with that name will be created. Navigate into it:
+
+```sh
+cd your-project-name
+```
+
+Now you're ready to build and run your micro:bit project.
+
+To flash and run the code on the micro:bit, use:
+
+```sh
+cargo embed
+```
