@@ -63,5 +63,4 @@ As per the micro:bit V2 schematic, the LED matrix pins connect to the following 
 
 ## Reference
 
-- [uBit.display (for micro:bit v1)](https://lancaster-university.github.io/microbit-docs/ubit/display/)  
-  This is for micro:bit v1. The LED pin layout is different in micro:bit v2, so it won't match exactly.
+- [uBit.display (for micro:bit v1)](https://lancaster-university.github.io/microbit-docs/ubit/display/)  : This is for micro:bit v1. The LED pin layout is different in micro:bit v2, so it won't match exactly.

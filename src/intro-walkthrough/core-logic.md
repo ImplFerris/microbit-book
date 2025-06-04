@@ -33,3 +33,16 @@ let mut timer = Timer::new(board.TIMER0);
 
 ### Display Matrix
 
+As we learned in the LED Matrix section, to turn on the LED at first row and first column, we will set column 1 to LOW. Then inside a loop, we will keep toggling row 1 between HIGH and LOW, with a 500 ms delay in between to create a blinking effect.
+
+```rust
+let _ = board.display_pins.col1.set_low();
+let mut row1 = board.display_pins.row1;
+
+loop {
+    let _ = row1.set_low();
+    timer.delay_ms(500);
+    let _ = row1.set_high();
+    timer.delay_ms(500);
+}
+```

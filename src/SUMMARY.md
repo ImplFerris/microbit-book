@@ -12,4 +12,7 @@
     - [no_std](./intro-walkthrough/no-std.md)
     - [LED Matrix](./intro-walkthrough/led-matrix.md)
     - [Core Logic](./intro-walkthrough/core-logic.md)
+    - [Panic Handler](./intro-walkthrough/panic-handler.md)
+    - [Target](./intro-walkthrough/target.md)
+    - [Are we there yet?](./intro-walkthrough/are-we-there-yet.md)
 <!-- - [Core Concepts](./core-concepts/index.md) -->
