@@ -4,7 +4,7 @@ Everything I am going to explain here is already covered in detail in the offici
 
 At the heart of the board is the nRF52833 system-on-chip (SoC). This is where all our code will run. It's built around a 32-bit Arm Cortex-M4 processor with a floating point unit(FPU). It comes with 128KB of RAM (yep, just 128KB!) and runs at 64 MHz speed.
 
-<a href ="./images/microbit-hardware-details.png"><img alt="microbit details" style="display: block; margin: auto;" src="./images/microbit-hardware-details.png"/></a>
+<a href ="./images/microbit-hardware-details.jpg"><img alt="microbit details" style="display: block; margin: auto;" src="./images/microbit-hardware-details.jpg"/></a>
 
 - **Buttons A and B**: These are two user buttons you can use as input. For example, if you're making a simple game, you can use them to move a player or trigger actions.
 - **5x5 LED Matrix**: This grid of red LEDs can display text, symbols, or animations.
