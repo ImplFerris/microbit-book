@@ -17,4 +17,5 @@
     - [Are we there yet?](./intro-walkthrough/are-we-there-yet.md)
 - [Fun with LED](./led-matrix/index.md)
     - [Display Character](./led-matrix/character.md)
+    - [Scrolling Effect](./led-matrix/scroll.md)
 <!-- - [Core Concepts](./core-concepts/index.md) -->
