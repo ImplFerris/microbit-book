@@ -33,6 +33,8 @@ cargo generate --git https://github.com/ImplFerris/mb2-template.git
 
 When prompted for a project name, enter something like led-matrix.
 
+When it prompts to select "BSP" or "HAL", select "BSP".
+
 Once the project is created, update `src/main.rs` with the following code.
 
 ## The full code

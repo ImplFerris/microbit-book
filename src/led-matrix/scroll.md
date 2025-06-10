@@ -136,6 +136,7 @@ This gives the illusion that the character is scrolling from right to left and d
 Let's look at how these values change as the offset increases to understand it better.
 
 **offset = 0**
+
 Only the first column of R (index 0) is visible at the rightmost column.
 
 char_col = col + offset - 4 = col - 4
@@ -158,6 +159,7 @@ Note: Using 0s and 1s directly can make it harder to see the shape clearly. So, 
 
 
 **offset = 1**
+
 Columns 3 and 4 show character columns 0 and 1 respectively.
 
 char_col = col + 1 - 4 = col - 3
@@ -178,6 +180,7 @@ char_col = col + 1 - 4 = col - 3
 
 
 **offset = 4**
+
 We will skip to the case where the offset is 4. At this point, the full character is completely visible on the display.
 
 

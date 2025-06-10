@@ -32,7 +32,11 @@ Once `cargo-generate` is installed, you can generate a new project using the fol
 cargo generate --git https://github.com/ImplFerris/mb2-template.git
 ```
 
-You will be prompted to enter a project name. After that, a new directory with that name will be created. Navigate into it:
+You will be prompted to enter a project name. 
+
+You will then prompted to choose "BSP" or "HAL"; 
+
+After that, a new directory with that name will be created. Navigate into it:
 
 ```sh
 cd your-project-name
