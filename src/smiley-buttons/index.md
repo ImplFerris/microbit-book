@@ -97,6 +97,8 @@ A short delay of 100 milliseconds follows each display to give a clear visual ef
 
 ## The Full code
 
+This exercise includes a new import not present in the previous one: `embedded_hal::digital::InputPin`. This trait is part of the Embedded HAL and provides methods such as `is_low()` and `is_high()` for reading the state of input pins.
+
 ```rust
 #![no_std]
 #![no_main]
@@ -150,10 +152,6 @@ fn main() -> ! {
     }
 }
 ```
-
-**Note:**
-
-This example includes a new import not present in the previous one: `embedded_hal::digital::InputPin`. This trait is part of the Embedded HAL and provides methods such as `is_low()` and `is_high()` for reading the state of input pins.
 
 
 ## Clone the existing project
