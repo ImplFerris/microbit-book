@@ -19,6 +19,8 @@
     - [Display Character](./led-matrix/character.md)
     - [Scrolling Effect](./led-matrix/scroll.md)
 - [Smiley Buttons](./smiley-buttons/index.md)
+- [Touch Sensing](./touch-input/index.md)
+    - [Simple Touch](./touch-input/simple-touch.md)
 - [Blinky with HAL](./nrf-hal/index.md)
     - [Peripherals](./nrf-hal/peripherals.md)
     - [GPIO](./nrf-hal/gpio.md)

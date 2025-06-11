@@ -153,7 +153,6 @@ fn main() -> ! {
 }
 ```
 
-
 ## Clone the existing project
 You can also clone (or refer) project I created and navigate to the `bsp/smiley-buttons` folder.
 
@@ -161,7 +160,6 @@ You can also clone (or refer) project I created and navigate to the `bsp/smiley-
 git clone https://github.com/ImplFerris/microbit-projects
 cd microbit-projects/bsp/smiley-buttons
 ```
-
 
 ## Flash
 
