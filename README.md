@@ -1,4 +1,4 @@
-# impl Rust for Microbit [WORK IN PROGRESS]
+# impl Rust for Microbit
 
 In this book, we use the Microbit (v2) with Rust to build simple and fun projects. The board is officially called "micro:bit". I will refer to it as both microbit and micro:bit interchangeably. The Microbit is widely used for learning purposes and comes with several built-in components, including an LED matrix, microphone, buttons, speaker, Bluetooth, and more.
 

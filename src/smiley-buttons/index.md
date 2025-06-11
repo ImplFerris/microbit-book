@@ -151,6 +151,9 @@ fn main() -> ! {
 }
 ```
 
+**Note:**
+
+This example includes a new import not present in the previous one: `embedded_hal::digital::InputPin`. This trait is part of the Embedded HAL and provides methods such as `is_low()` and `is_high()` for reading the state of input pins.
 
 
 ## Clone the existing project
