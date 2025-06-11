@@ -18,6 +18,7 @@
 - [Fun with LED](./led-matrix/index.md)
     - [Display Character](./led-matrix/character.md)
     - [Scrolling Effect](./led-matrix/scroll.md)
+- [Smiley Buttons](./smiley-buttons/index.md)
 - [Blinky with HAL](./nrf-hal/index.md)
     - [Peripherals](./nrf-hal/peripherals.md)
     - [GPIO](./nrf-hal/gpio.md)
