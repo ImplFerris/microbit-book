@@ -18,8 +18,47 @@ When prompted for a project name, enter something like `smiley-buttons`
 
 When it prompts to select "BSP" or "HAL", select the option "BSP".
 
+## Initialize Board, Timer, and Display
+
+Start by setting up the board, timer, and display as usual:
+```rust
+let board = Board::take().unwrap();
+let mut timer = Timer::new(board.TIMER0);
+let mut display = Display::new(board.display_pins);
+```
+
+## LED Matrix for Voltage Symbol
+
+```rust
+let led_matrix = [
+    [0, 0, 0, 1, 0],
+    [0, 0, 1, 0, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 1, 0, 0],
+    [0, 1, 0, 0, 0],
+];
+```
+
+## Configure the Logo Pin as Touch Input
+
+Set the GPIO pin p1_04 (which is internally connected to the small micro:bit logo) as a floating input. This allows it to detect touch using capacitive sensing.
+
+When the logo is touched, the micro:bit will show a voltage symbol on the LED matrix for 500 milliseconds, then clear the display.
+
+```rust
+// Pin connected to the Logo
+let mut touch_input = board.pins.p1_04.into_floating_input();
+
+loop {
+    if touch_input.is_low().unwrap() {
+        display.show(&mut timer, led_matrix, 500);
+    } else {
+        display.clear();
+    }
+}
+```
+
 ## The Full Code
-When the micro:bit logo is touched, it will display the voltage symbol on the LED matrix for 500 milliseconds, and then clear the screen.
 
 ```rust
 #![no_std]
@@ -38,9 +77,7 @@ fn panic(_: &core::panic::PanicInfo) -> ! {
 #[entry]
 fn main() -> ! {
     let board = Board::take().unwrap();
-
     let mut timer = Timer::new(board.TIMER0);
-
     let mut display = Display::new(board.display_pins);
     let led_matrix = [
         [0, 0, 0, 1, 0],

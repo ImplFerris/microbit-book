@@ -19,9 +19,9 @@ Touch sensing mode uses an internal weak pull-up resistor, typically 10 MΩ, con
 
 When you touch the pin (or the logo), your finger acts as a conductor and introduces a path to ground (through your body and the environment), slightly discharging the pin. This results in a detectable voltage drop that is read as a logical LOW.
 
-
 ## Pin Configuration
-When using touch sensing, the microcontroller sets the pin to floating input mode. This mode allows the voltage on the pin to be affected by small currents (like those introduced by a human touch) because nothing else is driving the pin.
+
+When using touch sensing, you should configure the pin as a floating input. This mode allows the voltage on the pin to be affected by small currents (like those introduced by a human touch) because nothing else is driving the pin.
 
 ```rust
 let mut touch_input = board.pins.p1_04.into_floating_input();
