@@ -21,6 +21,8 @@
 - [Smiley Buttons](./smiley-buttons/index.md)
 - [Touch Sensing](./touch-input/index.md)
     - [Simple Touch](./touch-input/simple-touch.md)
+- [Embassy](./embassy/index.md)
+    - [Microbit BSP](./embassy/microbit-bsp.md)
 - [Blinky with HAL](./nrf-hal/index.md)
     - [Peripherals](./nrf-hal/peripherals.md)
     - [GPIO](./nrf-hal/gpio.md)
