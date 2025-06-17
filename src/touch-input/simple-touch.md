@@ -64,7 +64,7 @@ loop {
 #![no_std]
 #![no_main]
 
-use embedded_hal::{delay::DelayNs, digital::InputPin};
+use embedded_hal::digital::InputPin;
 use microbit::{board::Board, display::blocking::Display, hal::timer::Timer};
 
 use cortex_m_rt::entry;

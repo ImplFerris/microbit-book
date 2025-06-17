@@ -23,6 +23,8 @@
     - [Simple Touch](./touch-input/simple-touch.md)
 - [Embassy](./embassy/index.md)
     - [Microbit BSP](./embassy/microbit-bsp.md)
+- [Speaker](./speaker/index.md)
+    - [Happy Birthday](./speaker/happy-birthday.md)
 - [Blinky with HAL](./nrf-hal/index.md)
     - [Peripherals](./nrf-hal/peripherals.md)
     - [GPIO](./nrf-hal/gpio.md)

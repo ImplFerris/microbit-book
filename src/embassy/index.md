@@ -60,7 +60,8 @@ async fn main(spawner: Spawner) {
 ```
 
 
-## References
+## Useful Resources
 
+- [Embassy Book](https://embassy.dev/book/#_introduction) : The Embassy Book is for everyone who wants to use Embassy and understand how Embassy works.
 - [Embassy Github](https://github.com/embassy-rs/embassy)
 - [embassy-nrf docs](https://docs.embassy.dev/embassy-nrf/git/nrf52833/index.html)
