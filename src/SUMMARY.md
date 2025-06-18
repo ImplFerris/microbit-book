@@ -25,6 +25,7 @@
     - [Microbit BSP](./embassy/microbit-bsp.md)
 - [Speaker](./speaker/index.md)
     - [Play Tone](./speaker/play-tone.md)
+    - [Embassy Beauty](./speaker/embassy-beauty.md)
     - [Happy Birthday](./speaker/happy-birthday.md)
     - [Custom Tune](./speaker/custom-tune.md)
 - [Blinky with HAL](./nrf-hal/index.md)
