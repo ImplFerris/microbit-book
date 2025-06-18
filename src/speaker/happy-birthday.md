@@ -1,6 +1,10 @@
 # Writing Rust Code to Play "Happy Birthday" on micro:bit v2
 
-In this section, we will play the "Happy Birthday" tune on the microbit speaker. For this, we will use a crate called `tinytones`. It comes with the "Happy Birthday" tune built in, so we do not need to define the pitches and durations ourselves. 
+In this section, we will play the "Happy Birthday" tune on the microbit speaker. 
+
+The functions provided by the microbit-bsp crate is great for micro:bit, but I wanted something that can be used across different MCUs like ESP32 or Raspberry Pi Pico. So I made a separate crate that defines notes and durations more cleanly, using musical terms like Quarter, Half, etc. In the next section, we'll start using that crate to play tunes in a more reusable and portable way.
+
+For this, we will use a crate called `tinytones`. It comes with the "Happy Birthday" tune built in, so we do not need to define the pitches and durations ourselves. 
 
 The crate also provides a `Pitch` enum and a `Tone` struct for defining your own melodies. It includes helper functions to convert musical durations like Quarter or Half into actual time values based on the tempo of the song.
 

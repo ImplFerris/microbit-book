@@ -65,4 +65,3 @@ async fn main(_s: Spawner) {
 
 Here, it loops through each pitch defined in the TUNE array and plays it for a given number of ticks. The duration is just ticks * 200 milliseconds. So if a note has ticks = 2, it plays for 400 ms.
 
-This works great for micro:bit, but I wanted something that can be used across different MCUs like ESP32 or Raspberry Pi Pico. So I made a separate crate that defines notes and durations more cleanly, using musical terms like Quarter, Half, etc. In the next section, we'll start using that crate to play tunes in a more reusable and portable way.
