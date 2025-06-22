@@ -1,0 +1,40 @@
+# Help & Troubleshooting
+
+If you face any bugs, errors, or other issues while working on the exercises, here are a few ways to troubleshoot and resolve them.
+
+## 1. Compare with Working Code
+
+Check the full code examples or clone the reference project. Compare your code and `Cargo.toml` dependency versions carefully. Look for any syntax or logic issues.
+
+## 2. Search or Report GitHub Issues
+
+Visit the GitHub issues page to see if someone else has encountered the same problem:
+[https://github.com/ImplFerris/microbit-book/issues?q=is%3Aissue](https://github.com/ImplFerris/microbit-book/issues?q=is%3Aissue)
+
+If not, you can raise a new issue and describe your problem clearly.
+
+## 3. Ask the Community
+
+The Rust Embedded community is active in the Matrix Chat. The Matrix chat is an open network for secure, decentralized communication.
+
+Here are some useful Matrix channels related to topics covered in this book:
+
+- **Embedded Devices Working Group**  
+  [`#rust-embedded:matrix.org`](https://matrix.to/#/#rust-embedded:matrix.org)  
+  General discussions around using Rust for embedded development.
+
+- **Nordic Chips / nRF Development**  
+  [`#nrf-rs:matrix.org`](https://matrix.to/#/#nrf-rs:matrix.org)  
+  Focused on using Rust with Nordic Semiconductor chips (like the nRF52 series used in micro:bit v2).
+
+- **Debugging with Probe-rs**  
+  [`#probe-rs:matrix.org`](https://matrix.to/#/#probe-rs:matrix.org)  
+  For support and discussion around the [probe-rs](https://probe.rs) debugging toolkit.
+
+- **Embedded Graphics**  
+  [`#rust-embedded-graphics:matrix.org`](https://matrix.to/#/#rust-embedded-graphics:matrix.org)  
+  For working with [`embedded-graphics`](https://docs.rs/embedded-graphics), a drawing library for embedded systems.
+
+You can create a Matrix account and join these channels to get help from experienced developers.
+
+You can find more community chat rooms in the [Awesome Embedded Rust - Community Chat Rooms section](https://github.com/rust-embedded/awesome-embedded-rust?tab=readme-ov-file#community-chat-rooms).

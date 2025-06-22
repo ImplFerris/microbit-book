@@ -6,6 +6,7 @@
     - [Quick Start](./quick-start.md)
     - [Abstraction Layers](./abstraction-layers.md)
     - [Project Template](./cargo-generate.md)
+    - [Help & Troubleshooting](./help.md)
 - [Project From Scratch](./intro-walkthrough/index.md)
     - [Runtime](./intro-walkthrough/runtime.md)
     - [Embedded HAL](./intro-walkthrough/embedded-hal.md)
