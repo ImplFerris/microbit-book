@@ -4,7 +4,9 @@ If you face any bugs, errors, or other issues while working on the exercises, he
 
 ## 1. Compare with Working Code
 
-Check the full code examples or clone the reference project. Compare your code and `Cargo.toml` dependency versions carefully. Look for any syntax or logic issues.
+Check the complete code examples or clone the reference project for comparison. Carefully review your code and `Cargo.toml` dependency versions. Look out for any syntax or logic errors. If a required feature is not enabled or there is a feature mismatch, make sure to enable the correct features as shown in the exercise. 
+
+If you find a version mismatch, either adjust your code(research and find a solution; it's a great way for you to learn and understand things better) to work with the newer version or update the dependencies to match the versions used in the tutorial.
 
 ## 2. Search or Report GitHub Issues
 
