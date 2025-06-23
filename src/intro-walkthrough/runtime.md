@@ -5,7 +5,7 @@ Let's start with the first dependency `cortex-m-rt`. This crate provides the sta
 ## Why do we need?
 In embedded development, there is typically no underlying OS (though specialized operating systems for microcontrollers do exist). This means you must set up everything yourself: how the program starts, how memory is initialized, and how the device responds to events like button presses or incoming data.
 
-To make all of this work, we will use a runtime crate. A runtime in embedded Rust provides the minimal startup code that runs before your main function, sets up memory (like the stack and heap), and helps you define how your program should react to [interrupts](../core-concepts/interrupts.md).
+To make all of this work, we will use a runtime crate. A runtime in embedded Rust provides the minimal startup code that runs before your main function, sets up memory (like the stack and heap), and helps you define how your program should react to interrupts.
 
 
 ---
