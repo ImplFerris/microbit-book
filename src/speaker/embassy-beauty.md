@@ -15,7 +15,6 @@ For this exercise also, we will be using the microbit-bsp crate with Embassy sup
 To generate a new project using the template, run the following command:
 
 ```sh
-#cargo generate --git https://github.com/lulf/embassy-template.git
 cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
 ```
 
