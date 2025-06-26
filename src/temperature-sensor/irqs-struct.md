@@ -87,8 +87,4 @@ unsafe impl typelevel::Binding<typelevel::TWISPI0,twis::InterruptHandler<periphe
 
 But this does not match what Temp::new expects. It expects a Binding for the TEMP interrupt. So the compiler will give an error.
 
----
-
-Phew... this is exactly why I showed you the full working code first, before diving into how all this works.
-
 
