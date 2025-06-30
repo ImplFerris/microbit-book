@@ -95,7 +95,7 @@ async fn main(_spawner: Spawner) -> ! {
             let z = data.z_mg();
             defmt::info!("x:{}, y:{}, z:{}", x, y, z);
         }
-        Timer::after(Duration::from_secs(5)).await;
+        Timer::after(Duration::from_secs(1)).await;
     }
 }
 ```
