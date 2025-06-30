@@ -8,11 +8,9 @@ The micro:bit includes a temperature sensor inside its nRF52 processor. It measu
 
 The sensor has an accuracy of around +/-5°C (uncalibrated) and can sense temperatures in the range of -40°C to 105°C.
 
----
+## Create Project from template
 
 We will use Embassy again, but this time without the BSP. Instead, we will work directly with the embassy-nrf HAL.
-
-## Create Project from template
 
 To generate a new project using the template, run the following command:
 

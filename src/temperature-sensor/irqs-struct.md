@@ -1,4 +1,4 @@
-# Expanding Macro
+# Expanding bind_interrupts Macro
 
 Let's go back to the "bind_interrupts!" macro we used earlier:
 

@@ -4,6 +4,9 @@ When working with embedded Rust, you will often come across terms like PAC, HAL,
 
 Let's start from the highest level of abstraction down to the lowest.
 
+> Note: Throughout this book, we will use whichever crate best fits the needs of each exercise. Some exercises may use a Board Support Package (BSP), while others may rely directly on the Hardware Abstraction Layer (HAL).
+ 
+
 ## Board Support Package (BSP)
 
 A BSP, also referred as Board Support Crate in Rust, tailored to specific development boards.  It combines the HAL with board-specific configurations, providing ready to use interfaces for onboard components like LEDs, buttons, and sensors. This allows developers to focus on application logic instead of dealing with low-level hardware details.  micro:bit also has Board support crate, you can find it [here](https://crates.io/crates/microbit-v2).
