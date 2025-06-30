@@ -8,15 +8,22 @@ In this section, we will see how these components fit together. Specifically, ho
 
 The I2C trait defines functions:
 
-
 - **transaction:** Performs a sequence of reads and writes as a single I2C transaction. This is the core method that must be implemented by the HAL. The other functions (read, write, write_read) are built on top of this.
 - read: Reads bytes from the I2C slave. This has a default implementation that internally calls transaction.
 - write: Writes bytes to the slave. This also has a default implementation that uses transaction.
 - write_read: Writes a few bytes, then reads from the slave without releasing the bus. This too is implemented using transaction.
 
+You can see the trait definition [here](https://github.com/rust-embedded/embedded-hal/blob/520945278942c301433c391f63a075227d9e7c84/embedded-hal-async/src/i2c.rs#L25C11-L25C14)
+
+## I2c Trait and HAL Integration
+
 <a href="../images/embedded-hal-trait-glue.png"><img alt="embedded hal trait approach" style="display: block; margin: auto;" src="../images/embedded-hal-trait-glue.png"/></a>
 
-You can see the trait definition [here](https://github.com/rust-embedded/embedded-hal/blob/520945278942c301433c391f63a075227d9e7c84/embedded-hal-async/src/i2c.rs#L25C11-L25C14): 
+This is an example diagram illustrating one of the traits provided by embedded-hal, the I2c trait. As we learned, this trait defines four functions, and the transaction function must be implemented by the HAL.
+
+The lsm303agr driver works with any I2C interface that implements the I2c trait. As shown in the diagram, multiple HALs can implement this trait. For example, the embassy-nrf HAL provides an implementation of I2c for the Twim struct, which can be used with lsm303agr.
+
+Similarly, another HAL like esp-hal (for ESP32) also implements the I2c trait. This means we can use the same lsm303agr driver on different platforms just by passing in a compatible I2C implementation. This trait-based design makes the driver platform-independent and reusable across different boards like the ESP32 and nRF-based micro:bit.
 
 ## Driver (lsm303agr) side 
 Now let's look at what happens on the driver side with an example. When you call "sensor.acceleration()", it eventually results in calling the "write_read" function of the I2c trait provided by the embedded-hal-async(since we are using the async version). Similarly, when you call sensor.init(), it results in calling the "write".
