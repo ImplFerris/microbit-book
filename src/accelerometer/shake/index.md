@@ -186,4 +186,18 @@ cargo run
 
 Now, try to shake the microbit, it should play a tone when a shake is detected.
 
+## Applications
+
+What else can you do with shake detection? Plenty of fun and creative possibilities!
+
+Here are a few ideas:
+
+- Shake to roll a dice: Each shake generates a random number between 1 and 6.
+
+- Shake to change color or animation: Update an LED pattern or display a new frame each time the micro:bit is shaken.
+
+- Shake to control a game: Use shakes as input for jumping, moving, or triggering actions in simple games.
+
+- Step counter: Detect small, repeated shakes to count steps like a basic pedometer.
+
 
