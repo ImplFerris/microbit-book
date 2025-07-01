@@ -47,3 +47,5 @@
         - [Readings](./accelerometer/print-values/readings.md)
         - [Observations](./accelerometer/print-values/observations.md)
     - [Shake](./accelerometer/shake/index.md)
+- [Microphone](./microphone/index.md)
+    - [Print Values](./microphone/print-values.md)
