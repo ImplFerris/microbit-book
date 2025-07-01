@@ -46,3 +46,4 @@
         - [I2C Trait](./accelerometer/print-values/embedded-hal.md)
         - [Readings](./accelerometer/print-values/readings.md)
         - [Observations](./accelerometer/print-values/observations.md)
+    - [Shake](./accelerometer/shake/index.md)
