@@ -49,3 +49,4 @@
     - [Shake](./accelerometer/shake/index.md)
 - [Microphone](./microphone/index.md)
     - [Print Values](./microphone/print-values.md)
+    - [Clap to Smile](./microphone/clap-to-smile.md)
