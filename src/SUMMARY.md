@@ -55,4 +55,6 @@
         - [GAP](./bluetooth/ble-stack/gap.md)
         - [GATT](./bluetooth/ble-stack/gatt.md)
     - [Hello BLE](./bluetooth/hello-ble/index.md)
-      - [Softdevice Firmware](./bluetooth/hello-ble/softdevice.md)
+        - [Dependencies](./bluetooth/hello-ble/dependencies.md)
+        - [Softdevice Firmware](./bluetooth/hello-ble/softdevice.md)
+        - [BLE Module](./bluetooth/hello-ble/ble-mod.md)
