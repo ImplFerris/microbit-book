@@ -1,4 +1,4 @@
-# Simple Rust Embedded Project: Show a Smiley on microbit When You Clap
+# Simple Embedded Rust Project: Show a Smiley on microbit When You Clap
 
 In a previous example, we explored how to read the sound level from the micro:bit's built-in microphone and printed those values to the system console. Now, we will take it a step further. In this simple Rust project, we will use sound level detection to recognize a clap and display a smiley face on the micro:bit's 5x5 LED matrix. 
 

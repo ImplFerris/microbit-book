@@ -4,9 +4,23 @@ Let's get started with a simple Rust program where we will print the sound level
 
 Later, we'll build a fun project where the micro:bit shows an emoji on the LED matrix when it detects a clap or any sudden sound.
 
+## Create Project from template
+To generate a new project using the template, run the following command:
+
+```sh
+cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+```
+
+You will be prompted to enter a project name.
+
+After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
+```
+nrf52833
+```
+
 ## Update Cargo.toml
 
-We will use the microbit-bsp crate. Open the Cargo.toml file and add the following lines:
+Open the Cargo.toml file and add the following lines:
 
 ```toml
 microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
@@ -34,7 +48,7 @@ embassy-executor = { version = "0.7", features = [
 
 ## Binding interrupt
 
-We've already seen this pattern in the temperature sensor and accelerometer chapters. Here, we are just binding the saadc::InterruptHandler to the SAADC interrupt. 
+We've already seen this pattern in the temperature sensor and accelerometer chapters. Here, we are just binding the saadc::InterruptHandler to the SAADC interrupt.
 
 This will give us the unit struct "Irqs" that we will use when setting up the microphone.
 
@@ -46,7 +60,7 @@ bind_interrupts!(struct Irqs {
 
 ## Microphone
 
-To use the microphone, we call Microphone::new() and pass in four things. These include the SAADC (board.saadc), the microphone input pin (board.microphone), the pin used to enable the microphone (board.micen), and the interrupt unit struct "Irqs" which was created earlier. 
+To use the microphone, we call Microphone::new() and pass in four things. These include the SAADC (board.saadc), the microphone input pin (board.microphone), the pin used to enable the microphone (board.micen), and the interrupt unit struct "Irqs" which was created earlier.
 
 ```rust
 let mut mic = Microphone::new(board.saadc, Irqs, board.microphone, board.micen);

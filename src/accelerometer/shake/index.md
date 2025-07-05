@@ -2,6 +2,29 @@
 
 We have successfully printed the accelerometer readings to the system console. We assume you have tried tilting the microbit in different directions and noticed how the values change. While that is fun, simply printing values is not very exciting. In this chapter, we will write a program that plays a tone when you shake the micro:bit.
 
+## Create Project from template
+To generate a new project using the template, run the following command:
+
+```sh
+cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+```
+
+You will be prompted to enter a project name.
+
+After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
+```
+nrf52833
+```
+
+## Update Cargo.toml
+
+Open the Cargo.toml file and add the following lines:
+
+```toml
+microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
+lsm303agr = { version = "1.1.0", features = ["async"] }
+```
+
 ## How to detect shake?
 
 To detect a shake, we first need to calculate the magnitude of the accelerometer readings. The formula for computing the magnitude is:
@@ -27,11 +50,11 @@ magnitude   = sqrt(1053910) ≈ 1026.6
 
 Let's take one more sample reading: x:-875, y:-567, z:-143
 ```rust
-x^2          = (-875)^2   = 765625  
-y^2          = (-567)^2   = 321489  
-z^2          = (-143)^2   = 20449  
+x^2          = (-875)^2   = 765625
+y^2          = (-567)^2   = 321489
+z^2          = (-143)^2   = 20449
 
-magnitude^2  = 765625 + 321489 + 20449 = 1107563  
+magnitude^2  = 765625 + 321489 + 20449 = 1107563
 magnitude    = sqrt(1107563) ≈ 1052.4
 ```
 ### Readings While Shaking the Microbit
@@ -41,15 +64,15 @@ You can try a few more sample readings and calculate their magnitudes. Most valu
 Here is one sample I recorded while shaking the device: x:-1265, y:-2029, z:1657
 
 ```rust
-x^2          = (-1265)^2  = 1600225  
-y^2          = (-2029)^2  = 4116841  
-z^2          = (1657)^2   = 2745649  
+x^2          = (-1265)^2  = 1600225
+y^2          = (-2029)^2  = 4116841
+z^2          = (1657)^2   = 2745649
 
-magnitude^2  = 1600225 + 4116841 + 2745649 = 8462715  
+magnitude^2  = 1600225 + 4116841 + 2745649 = 8462715
 magnitude    = sqrt(8462715) ≈ 2909.07
 ```
 
-Woah, now the magnitude is nearly 3000! This is a significant jump from the resting value and clearly indicates a strong shake. 
+Woah, now the magnitude is nearly 3000! This is a significant jump from the resting value and clearly indicates a strong shake.
 
 To detect a shake in code, we can choose a threshold value (for example, 2000) and compare the calculated magnitude against it. If the magnitude is greater than this threshold, we can say a shake has occurred.
 
@@ -199,5 +222,3 @@ Here are a few ideas:
 - Shake to control a game: Use shakes as input for jumping, moving, or triggering actions in simple games.
 
 - Step counter: Detect small, repeated shakes to count steps like a basic pedometer.
-
-
