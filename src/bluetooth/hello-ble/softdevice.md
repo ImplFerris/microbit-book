@@ -103,3 +103,5 @@ NOTE: You might need to adjust the RAM start and length in memory.x if the SoftD
 ```
 RAM                               : ORIGIN = 0x2000afa8, LENGTH = 86104
 ```
+
+The nrf-softdevice crate will also warn you if you allocate more memory to the SoftDevice than necessary. 

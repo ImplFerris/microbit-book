@@ -58,3 +58,8 @@
         - [Dependencies](./bluetooth/hello-ble/dependencies.md)
         - [Softdevice Firmware](./bluetooth/hello-ble/softdevice.md)
         - [BLE Module](./bluetooth/hello-ble/ble-mod.md)
+        - [Softdevice Config](./bluetooth/hello-ble/softdevice-config.md)
+        - [Battery Service](./bluetooth/hello-ble/batter-service.md)
+        - [Main](./bluetooth/hello-ble/main.md)
+        - [Connection](./bluetooth/hello-ble/connnection.md)
+        - [Connect Mobile](./bluetooth/hello-ble/connect-mobile.md)

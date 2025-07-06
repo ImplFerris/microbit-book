@@ -27,7 +27,7 @@ pub fn get_soft_device() -> &'static mut Softdevice {
 This gives us an instance of the `Softdevice` struct.  We will call get_soft_device() from the main function later and do further actions on the instance.
 
 
-## ble/adv.rs
+## ble/adv.rs file
 
 Next, we will create a module to prepare the advertisement data.  We already covered the core ideas behind advertising in the [GAP section](../ble-stack/gap.md).
 
