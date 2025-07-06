@@ -43,6 +43,8 @@ Clear any existing code inside the main function and add this line to initialize
 ```rust
 async fn main(spawner: Spawner) {
     let _ = embassy_nrf::init(nrf_config());
+
+    // We will add remaining code here followed by the above line
 }
 ```
 
@@ -53,7 +55,7 @@ We first get the Softdevice instance by calling get_soft_device function, which 
 Then we run sd.run() in the background with the help of embassy task.
  
 ```rust
- let sd = get_soft_device();
+let sd = get_soft_device();
 let server = unwrap!(Server::new(sd));
 unwrap!(spawner.spawn(softdevice_task(sd)));
 ```
