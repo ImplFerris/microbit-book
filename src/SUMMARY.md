@@ -51,7 +51,7 @@
         - [Observations](./accelerometer/print-values/observations.md)
         - [Gravity](./accelerometer/print-values/gravity.md)
     - [Shake](./accelerometer/shake/index.md)
-- [Magnetometer](./magnetometer/index.md)
+<!-- - [Magnetometer](./magnetometer/index.md) -->
 - [Bluetooth](./bluetooth/index.md)
     - [BLE Stack](./bluetooth/ble-stack/index.md)
         - [GAP](./bluetooth/ble-stack/gap.md)
@@ -65,3 +65,4 @@
         - [Main](./bluetooth/hello-ble/main.md)
         - [Connection](./bluetooth/hello-ble/connnection.md)
         - [Connect Mobile](./bluetooth/hello-ble/connect-mobile.md)
+    - [TrouBLE](./bluetooth/trouble/index.md)

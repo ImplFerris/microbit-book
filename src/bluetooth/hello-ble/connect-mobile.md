@@ -53,4 +53,7 @@ To receive automatic updates when the battery level changes, tap the icon with t
 <a href ="./images/microbit-ble-nrf-subscribe-rust-code.jpg"><img alt="nrf connect" style="display: block; margin: auto;width:500px;" src="./images/microbit-ble-nrf-subscribe-rust-code.jpg"/></a>
 
 
+## What's Next?
+
+All we did here was use the demo mobile app provided by Nordic. In a real-life scenario, you might need to build your own app or figure out how to send data in a way that matches an existing app.
 
