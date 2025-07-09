@@ -66,3 +66,4 @@
         - [Connection](./bluetooth/hello-ble/connnection.md)
         - [Connect Mobile](./bluetooth/hello-ble/connect-mobile.md)
     - [TrouBLE](./bluetooth/trouble/index.md)
+- [External Components](./external-components.md)
