@@ -24,7 +24,7 @@ nrf52833-hal = "0.18.0" # Version might be different in the template
 To generate a new project using the template, run the following command:
 
 ```sh
-cargo generate --git https://github.com/ImplFerris/mb2-template.git
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 88d339b
 ```
 
 When prompted for a project name, enter something like `led-blinky` (If you already have a project with this name, use a different name or place HAL-based projects in a separate folder, like I do.)

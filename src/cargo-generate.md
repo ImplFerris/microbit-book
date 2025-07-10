@@ -29,7 +29,7 @@ cargo install cargo-generate
 Once `cargo-generate` is installed, you can generate a new project using the following command:
 
 ```sh
-cargo generate --git https://github.com/ImplFerris/mb2-template.git
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 88d339b
 ```
 
 You will be prompted to enter a project name. 

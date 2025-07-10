@@ -27,7 +27,7 @@ Although pressing a button might intuitively seem like activating something, the
 To generate a new project using the template, run the following command:
 
 ```sh
-cargo generate --git https://github.com/ImplFerris/mb2-template.git
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 88d339b
 ```
 
 When prompted for a project name, enter something like `smiley-buttons`
