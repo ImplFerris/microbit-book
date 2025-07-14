@@ -5,20 +5,19 @@ We have seen what a BLE stack is and understood the basic concepts. Now it's tim
 Our program will include one BLE service called `BatteryService`. A connected device (like your phone) can either read the current battery level or subscribe to get updates whenever the battery level changes.
 
 ## Create Project from template
-For this exercise also, we will be using the microbit-bsp crate with Embassy support.
 
-To generate a new project using the template, run the following command:
+We will use Embassy again, but this time without the BSP. Instead, we will work directly with the embassy-nrf HAL.
 
 ```sh
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-You will be prompted to enter a project name.
+- When it prompts for a project name, type something like "hell-ble".
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
+- When it prompts whether to use async, select "true".
+
+- When it prompts you to select between "BSP" or "HAL", select the option "HAL".
+
 
 ## Project Structure
 

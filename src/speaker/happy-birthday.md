@@ -9,28 +9,24 @@ For this, we will use a crate called `tinytones`. It comes with the "Happy Birth
 The crate also provides a `Pitch` enum and a `Tone` struct for defining your own melodies. It includes helper functions to convert musical durations like Quarter or Half into actual time values based on the tempo of the song.
 
 ## Create Project from template
-For this exercise also, we will be using the microbit-bsp crate with Embassy support.
 
-To generate a new project using the template, run the following command:
+For this project, we will be using `microbit-bsp` (with Embassy). To generate a new project using the template, run the following command:
 
 ```sh
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-You will be prompted to enter a project name. 
+- When it prompts for a project name, type something like "play-song".
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
+- When it prompts whether to use async, select "true".
+
+- When it prompts you to select between "BSP" or "HAL", select the option "BSP".
 
 ## Update Cargo.toml
 
-We will use the microbit-bsp crate, and also add tinytones. Open the Cargo.toml file and add the following lines:
+We will add tinytones crate. Open the Cargo.toml file and add the following lines:
 
 ```toml
-# microbit-bsp = "0.3.0"
-microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
 tinytones = { version="0.1.0" }
 ```
 

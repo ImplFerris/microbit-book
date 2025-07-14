@@ -4,35 +4,30 @@ Let's start by writing a simple Rust program that reads and prints values from t
 
 In later chapters, we will explore some fun exercises using these values. For now, let's get started!
 
-
 ## Create Project from template
 
-For this exercise, we will be using the microbit-bsp crate with Embassy support. Technically, we could work directly with the embassy-nrf crate, as it is sufficient for this simple example. However, in the next chapter, we will play a sound or display something on the LED matrix. For that, we will rely on the extra features provided by microbit-bsp. So we are layering things now to make those future tasks easier.
-
-To generate a new project using the template, run the following command:
+For this project, we will be using `microbit-bsp` (with Embassy). To generate a new project using the template, run the following command:
 
 ```sh
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-You will be prompted to enter a project name. 
+- When it prompts for a project name, type something like "accelerometer-print".
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
+- When it prompts whether to use async, select "true".
+
+- When it prompts you to select between "BSP" or "HAL", select the option "BSP".
 
 ## Update Cargo.toml
 
-We will use the microbit-bsp crate. Open the Cargo.toml file and add the following lines:
+The "[lsm303agr](https://docs.rs/lsm303agr/latest/lsm303agr/)" crate is a new dependency we are introducing. It is a platform-agnostic Rust driver for the LSM303AGR sensor, providing a convenient set of functions to read data from the device. We have enabled the "async" feature also for the driver. 
 
 ```toml
-# microbit-bsp = "0.3.0"
-microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
 lsm303agr = { version = "1.1.0", features = ["async"] }
+static_cell = { version = "2" }
 ```
 
-The "[lsm303agr](https://docs.rs/lsm303agr/latest/lsm303agr/)" crate is a new dependency we are introducing. It is a platform-agnostic Rust driver for the LSM303AGR sensor, providing a convenient set of functions to read data from the device. We have enabled the "async" feature also for the driver. 
+We also add the static_cell crate, which provides tools for safely creating and accessing static memory. We use it to allocate a fixed-size RAM buffer required by the TWIM (I2C) driver. This buffer must have a 'static lifetime and live in RAM, which static_cell helps manage safely.
 
 ## Update the imports
 

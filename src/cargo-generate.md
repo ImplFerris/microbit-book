@@ -32,6 +32,9 @@ Once `cargo-generate` is installed, you can generate a new project using the fol
 cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 88d339b
 ```
 
+> Note: I have included the specific rev (revision) value in the cargo generate command to ensure the setup is reproducible. Without it, future changes to the template might break compatibility with this tutorial.
+
+
 You will be prompted to enter a project name. 
 
 You will then prompted to choose "BSP" or "HAL"; 
