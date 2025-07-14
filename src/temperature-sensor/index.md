@@ -12,18 +12,16 @@ The sensor has an accuracy of around +/-5°C (uncalibrated) and can sense temper
 
 We will use Embassy again, but this time without the BSP. Instead, we will work directly with the embassy-nrf HAL.
 
-To generate a new project using the template, run the following command:
-
 ```sh
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-You will be prompted to enter a project name. 
+- When it prompts for a project name, type something like "temperature".
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
+- When it prompts whether to use async, select "true".
+
+- When it prompts you to select between "BSP" or "HAL", select the option "HAL".
+
 
 ## The Full code
 

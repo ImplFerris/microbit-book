@@ -2,27 +2,29 @@
 
 We have successfully printed the accelerometer readings to the system console. We assume you have tried tilting the microbit in different directions and noticed how the values change. While that is fun, simply printing values is not very exciting. In this chapter, we will write a program that plays a tone when you shake the micro:bit.
 
+
 ## Create Project from template
-To generate a new project using the template, run the following command:
+
+For this project, we will be using `microbit-bsp` (with Embassy). To generate a new project using the template, run the following command:
 
 ```sh
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-You will be prompted to enter a project name.
+- When it prompts for a project name, type something like "accelerometer-print".
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
+- When it prompts whether to use async, select "true".
+
+- When it prompts you to select between "BSP" or "HAL", select the option "BSP".
+
 
 ## Update Cargo.toml
 
 Open the Cargo.toml file and add the following lines:
 
 ```toml
-microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
 lsm303agr = { version = "1.1.0", features = ["async"] }
+static_cell = { version = "2" }
 ```
 
 ## How to detect shake?
@@ -124,6 +126,7 @@ use microbit_bsp::{
     Microbit,
     speaker::{NamedPitch, Pitch, PwmSpeaker},
 };
+use static_cell::ConstStaticCell;
 
 #[panic_handler]
 fn panic(panic_info: &core::panic::PanicInfo) -> ! {
@@ -149,6 +152,7 @@ async fn main(_spawner: Spawner) -> ! {
     // let p = embassy_nrf::init(Default::default());
     let board = Microbit::default();
 
+    static RAM_BUFFER: ConstStaticCell<[u8; 16]> = ConstStaticCell::new([0; 16]);
     let twim_config = twim::Config::default();
     let twim0 = Twim::new(
         board.twispi0,
@@ -156,6 +160,7 @@ async fn main(_spawner: Spawner) -> ! {
         board.i2c_int_sda,
         board.i2c_int_scl,
         twim_config,
+        RAM_BUFFER.take(),
     );
 
     let mut speaker = PwmSpeaker::new(SimplePwm::new_1ch(board.pwm0, board.speaker));
@@ -188,8 +193,6 @@ async fn main(_spawner: Spawner) -> ! {
     }
 }
 ```
-
-
 
 ## Clone the Quick start project
 You can clone the quick start project I created and navigate to the project folder and run it.

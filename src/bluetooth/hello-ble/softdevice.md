@@ -63,7 +63,7 @@ MEMORY
   MBR                               : ORIGIN = 0x00000000, LENGTH = 4K
   SOFTDEVICE                        : ORIGIN = 0x00001000, LENGTH = 112K
   FLASH                             : ORIGIN = 0x0001C000, LENGTH = 396K
-  RAM                               : ORIGIN = 0x2000afa8, LENGTH = 86104
+  RAM                               : ORIGIN = 0x20003410, LENGTH = 117744
 }
 ```
 
@@ -86,14 +86,14 @@ The nice part is that the nrf-softdevice crate will tell us exactly how much RAM
 Here's the trick: start with a small RAM reservation - for example, try setting the program's RAM start address to 0x20001fa8 (so you're reserving about 8 KB initially). When you flash and run the program, you'll get a log like this:
 
 ```sh
-softdevice RAM: 44968 bytes
+softdevice RAM: 13328 bytes
 ```
 
-So in this case, it needs 44968 bytes, which is 0xafa8 in hex. That's why in the final memory.x, we set the program RAM start at 0x2000afa8. The total RAM on the chip is 128 KB = 131072 bytes, so the remaining RAM for your app becomes:
+So in this case, it needs 13328 bytes, which is 0x3410 in hex. That's why in the final memory.x, we set the program RAM start at 0x20003410. The total RAM on the chip is 128 KB = 131072 bytes, so the remaining RAM for your app becomes:
 
 ```sh
 # remaining_ram = total_ram - softdevice_ram
-remaining_ram = 131072 - 44968 = 86104 bytes
+remaining_ram = 131072 - 13328 = 117744 bytes
 ```
 That's the usable RAM your program gets after the SoftDevice takes its share.
 
@@ -101,7 +101,7 @@ That's the usable RAM your program gets after the SoftDevice takes its share.
 
 NOTE: You might need to adjust the RAM start and length in memory.x if the SoftDevice configuration changes later. But no need to worry - the nrf-softdevice crate will tell you exactly how much RAM it needs at runtime. We can then adjust them and re-run the program.
 ```
-RAM                               : ORIGIN = 0x2000afa8, LENGTH = 86104
+RAM                               : ORIGIN = 0x20003410, LENGTH = 117744
 ```
 
 The nrf-softdevice crate will also warn you if you allocate more memory to the SoftDevice than necessary. 

@@ -7,51 +7,58 @@ Let's jump in and create a simple async program using this crate.
 
 ## Embassy Project Template
 
-Until now, we have been using a custom project template designed specifically for this book. Now, we will use the [Embassy Project Template](https://github.com/lulf/embassy-template), created by Ulf Lilleengen. This template is designed for Embassy-based projects and includes support for a wide range of microcontrollers.  In fact, it was created by the same person who maintains the `microbit-bsp` crate.
-
-To generate a new project using this template, run: 
+So far, we have been using a custom project template designed specifically for this book. You can also use the [Embassy Project Template](https://github.com/lulf/embassy-template), created by Ulf Lilleengen. This template is designed for Embassy-based projects and includes support for a wide range of microcontrollers.  In fact, it was created by the same person who maintains the `microbit-bsp` crate.
 
 ```sh
-#cargo generate --git https://github.com/lulf/embassy-template.git
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/lulf/embassy-template.git
 ```
 
-> Note: I have included the specific rev (revision) value in the cargo generate command to ensure the setup is reproducible. Without it, future changes to the template might break compatibility with this tutorial.
+When prompted to select the target microcontroller, choose "nrf52833". This will create a new project configured with Embassy support for the nrf52833 chip (which powers the micro:bit v2).
 
-You will be prompted to enter a project name. 
+Originally, I was using this template to generate Embassy projects. But at the time of writing, it did not have the latest GitHub revision of embassy-nrf. I wanted to use some of the new features in both embassy-nrf and microbit-bsp, so I switched to a custom template.
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
-This will generate a new project set up with Embassy support for the nrf52833 chip (which is used in the micro:bit v2)
+Still, I kept this here because it is a nice and useful template. It will be helpful once you finish this book and want to explore more.
 
-Now you can open the `Cargo.toml` file to see the dependencies included by the template. You will notice Embassy-related crates and async-supported libraries like `embedded-hal-async` already added for you.
+## Create Project from template
 
-## Update Cargo.toml
+For this project, we will be using `microbit-bsp` (with Embassy). To generate a new project using the template, run the following command:
 
-We will use the microbit-bsp crate, open the `Cargo.toml` and add the following line:
-
-```toml
-# microbit-bsp = "0.3.0"
-microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
+```sh
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-The microbit-bsp crate version 0.3.0 (current version at the time of writing) is not compatible with the embassy project template and will cause dependency conflicts. However, the latest version on GitHub is compatible. To prevent future updates from breaking compatibility with this tutorial, we lock the dependency to a specific rev.
+- When it prompts for a project name, type something like "led-scroll".
 
+- When it prompts whether to use async, select "true".
 
-## Prepare main.rs for BSP Code
+- When it prompts you to select between "BSP" or "HAL", select the option "BSP".
 
-Open the `src/main.rs` file and remove any existing code inside the main function. We will replace it with code that uses the BSP crate.
+Once the project is generated, open the Cargo.toml file. You will see that it includes the microbit-bsp crate along with other Embassy-related crates.
 
-## Initialization
+## BSP Boilerplate code
 
-We start by creating an instance of the Microbit struct, which gives us access to the board’s peripherals. Then, we retrieve the display from it:
+Open the src/main.rs file. You will see some boilerplate code that creates an instance of the Microbit struct. This gives us access to the board's peripherals.
 
 ```rust
-let board = Microbit::default();
+#[embassy_executor::main]
+async fn main(_spawner: Spawner) -> ! {
+    let board = Microbit::default();
+
+    loop {
+        Timer::after_secs(1).await;
+    }
+}
+```
+
+The template includes a simple loop with a 1 second delay using Timer. We will remove this and write our own loop logic for this project.
+
+## Initialize Display
+To use the LED matrix display, we first need to take ownership of it from the board:
+
+```rust
 let mut display = board.display;
 ```
+This gives us access to the built-in 5x5 LED display, so we can start showing patterns or animations on it.
 
 ## Adjusting Brightness
 

@@ -13,7 +13,7 @@ For this project, we will be using `microbit-bsp` (with Embassy). To generate a 
 cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-- When it prompts for a project name, type something like "led-dracula".
+- When it prompts for a project name, type something like "mic-sound-level".
 
 - When it prompts whether to use async, select "true".
 
