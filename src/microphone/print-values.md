@@ -4,63 +4,38 @@ Let's get started with a simple Rust program where we will print the sound level
 
 Later, we'll build a fun project where the micro:bit shows an emoji on the LED matrix when it detects a clap or any sudden sound.
 
+
 ## Create Project from template
-To generate a new project using the template, run the following command:
+
+For this project, we will be using `microbit-bsp` (with Embassy). To generate a new project using the template, run the following command:
 
 ```sh
-cargo generate --git https://github.com/lulf/embassy-template.git -r f3179dc
+cargo generate --git https://github.com/ImplFerris/mb2-template.git --rev 3d07b56
 ```
 
-You will be prompted to enter a project name.
+- When it prompts for a project name, type something like "led-dracula".
 
-After that, you will be asked to select the target microcontroller (MCU). From the list, choose:
-```
-nrf52833
-```
+- When it prompts whether to use async, select "true".
 
-## Update Cargo.toml
-
-Open the Cargo.toml file and add the following lines:
-
-```toml
-microbit-bsp = { git = "https://github.com/lulf/microbit-bsp", rev = "9c7d52e" }
-```
-
-Next, find the entry for the embassy-executor crate. It might look like this:
-```rust
-embassy-executor = { version = "0.7", features = [
-    "task-arena-size-1024",
-    ...
-] }
-```
-
-Update the task-arena-size-1024 feature to task-arena-size-8192 to give more memory to async tasks. The final version should look like this:
-
-```rust
-embassy-executor = { version = "0.7", features = [
-    "task-arena-size-8192",
-    "arch-cortex-m",
-    "executor-thread",
-    "defmt",
-    "executor-interrupt",
-] }
-```
+- When it prompts you to select between "BSP" or "HAL", select the option "BSP".
 
 ## Binding interrupt
 
-We've already seen this pattern in the temperature sensor and accelerometer chapters. Here, we are just binding the saadc::InterruptHandler to the SAADC interrupt.
+We've already seen similar code in the temperature sensor and accelerometer chapters. Here, we are binding saadc::InterruptHandler to the SAADC interrupt. 
 
-This will give us the unit struct "Irqs" that we will use when setting up the microphone.
+This tells the system that whenever the SAADC finishes converting a signal from the microphone into a number, the interrupt handler will be notified. In this case, we are using the interrupt handler provided by the embassy-nrf crate, which takes care of handling these events for us in the background.
 
 ```rust
 bind_interrupts!(struct Irqs {
     SAADC => saadc::InterruptHandler;
 });
 ```
+This will give us the unit struct "Irqs" that we will use when setting up the microphone.
+
 
 ## Microphone
 
-To use the microphone, we call Microphone::new() and pass in four things. These include the SAADC (board.saadc), the microphone input pin (board.microphone), the pin used to enable the microphone (board.micen), and the interrupt unit struct "Irqs" which was created earlier.
+To use the microphone, we call Microphone::new() and pass four arguments. These include the SAADC (board.saadc), the microphone input pin (board.microphone), the pin used to enable the microphone (board.micen), and the interrupt unit struct "Irqs" which was created earlier.
 
 ```rust
 let mut mic = Microphone::new(board.saadc, Irqs, board.microphone, board.micen);
@@ -83,7 +58,7 @@ use embassy_nrf::{
     bind_interrupts,
     saadc::{self},
 };
-use embassy_time::{Duration, Timer};
+use embassy_time::Timer;
 use microbit_bsp::{Microbit, mic::Microphone};
 use {defmt_rtt as _, panic_probe as _};
 
@@ -98,7 +73,7 @@ async fn main(_spawner: Spawner) -> ! {
     let mut mic = Microphone::new(board.saadc, Irqs, board.microphone, board.micen);
     loop {
         info!("Sound Level: {}", mic.sound_level().await);
-        Timer::after(Duration::from_millis(100)).await;
+        Timer::after_millis(100).await;
     }
 }
 ```
