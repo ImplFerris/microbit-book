@@ -1,6 +1,6 @@
 # The Beauty of Embassy
 
-In this section, we will extend the playing tone exercise by introducing a background task. This demonstrates the er of Embassy's async task model.
+In this section, we will extend the playing tone exercise by introducing a background task. This demonstrates the power of Embassy's async task model.
 
 The main task will scroll the text "EMBASSY" continuously on the display. At the same time, a background task will wait for button presses. Depending on which button is pressed, it will either start or stop the tone playback, just like in the previous example.
 
