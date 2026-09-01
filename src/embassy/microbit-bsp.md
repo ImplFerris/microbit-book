@@ -68,7 +68,7 @@ The BSP crate provides a nice function to control the brightness of the LED matr
 display.set_brightness(Brightness::new(5));
 ```
 
-## Scorlling Text
+## Scrolling Text
 
 The BSP crate provides two functions to scroll text across the LED display. The `scroll` function automatically calculates the duration based on the text length, while `scroll_with_speed` gives us full control over the scrolling speed by letting you specify a Duration.
 
